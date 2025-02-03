@@ -1,9 +1,5 @@
 def setstream2(gameid,gamename):
     import streamlit as st
-    import numpy as np
-    import matplotlib.pyplot as plt
-    import japanize_matplotlib
-    import streamlit as st
     from PIL import Image
     gameid=str(gameid)
     headerfile=f"data/{gameid}/{gameid}_header.jpg"
