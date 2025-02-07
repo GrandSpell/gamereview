@@ -20,6 +20,7 @@ kiwisolver==1.4.8
 markdown-it-py==3.0.0
 MarkupSafe==3.0.2
 matplotlib==3.10.0
+matplotlib-fontja==1.0.0
 mdurl==0.1.2
 narwhals==1.25.0
 numpy==2.2.2

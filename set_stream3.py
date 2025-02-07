@@ -2,7 +2,7 @@ def setstream3(gameid1,gameid2,gamename1,gamename2):
     import streamlit as st
     import numpy as np
     import matplotlib.pyplot as plt
-    from japanize-matplotlib import japanize_matplotlib
+    import matplotlib_fontja
     import streamlit as st
     from PIL import Image
     import pandas as pd
