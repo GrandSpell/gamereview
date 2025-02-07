@@ -34,7 +34,7 @@ HIDE_ST_STYLE = """
                 </style>
 """
 
-st.markdown(const.HIDE_ST_STYLE, unsafe_allow_html=True)
+st.markdown(HIDE_ST_STYLE, unsafe_allow_html=True)
 
 section = st.sidebar.radio(
     "モードを選択:",
