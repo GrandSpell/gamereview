@@ -1,32 +1,21 @@
-from set_stream import setstream
-from set_stream2 import setstream2
-from gameids import get_gameid
-titledix,titles=get_gameid()
+from main1 import main1
+from main2 import main2
 import streamlit as st
 st.set_page_config(
-    page_title="reviews",
+    page_title="ゲームレビュー情報可視化システム",
     layout="wide",
     initial_sidebar_state="expanded",
 )
-nowoption=titles[0]
-option = st.sidebar.selectbox(
-    'ゲームを選択:',
-    titles
-)
-title=option
-gameid=titledix[title]
-
 
 section = st.sidebar.radio(
-    "セクションを選択:",
-    ("概要", "詳細表示")
+    "モードを選択:",
+    ("基本モード", "比較分析モード")
 )
 # セクションに応じたコンテンツを表示
-if section == "概要":
-    setstream(gameid,title)
-elif section == "詳細表示":
-    setstream2(gameid,title)
-
+if section == "基本モード":
+    main1()
+elif section == "比較分析モード":
+    main2()
 
 
 

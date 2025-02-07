@@ -9,8 +9,8 @@ def setstream3(gameid1,gameid2,gamename1,gamename2):
     from io import BytesIO
     
     def setgame(num,gamename,headerfile):
-        col,title,img=st.columns([1, 2, 1])
-        col.title(f"ゲーム{num}:")
+        col,title,img=st.columns([1, 6, 2])
+        col.title(f"{num}:")
         title.title(gamename)
         image = Image.open(headerfile)
         img.image(image)
@@ -109,12 +109,21 @@ def setstream3(gameid1,gameid2,gamename1,gamename2):
     headerfile2=f"data/{gameid2}/{gameid2}_header.jpg"
     setgame(1,gamename1,headerfile1)
     setgame(2,gamename2,headerfile2)
+    tabs = st.tabs(["機能的観点", "心理的観点"])
+    with tabs[0]:
+        aspects = ["操作のしやすさ", "難易度の適切さ", "進捗の明確さ", "目的の明確さ", "視聴覚の魅力"]
+        getchart(gameid1, gameid2, aspects)
 
-    asptitle="機能的観点"
-    st.header(asptitle,divider=True)
-    aspects=["操作のしやすさ","難易度の適切さ","進捗の明確さ","目的の明確さ","視聴覚の魅力"]
-    getchart(gameid1,gameid2,aspects)
-    asptitle="心理的観点"
-    st.header(asptitle,divider=True)
-    aspects=["遊ぶ意義","没入感","成長感の得やすさ","好奇心への刺激","自由度"]
-    getchart(gameid1,gameid2,aspects)
+    with tabs[1]:
+        aspects = ["遊ぶ意義", "没入感", "成長感の得やすさ", "好奇心への刺激", "自由度"]
+        getchart(gameid1, gameid2, aspects)
+    css = '''
+    <style>
+        .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
+        font-size:24px;
+        }
+    </style>
+    '''
+    st.markdown(css, unsafe_allow_html=True)
+
+
