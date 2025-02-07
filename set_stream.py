@@ -2,6 +2,7 @@ def setstream(gameid,gamename):
     import streamlit as st
     import numpy as np
     import matplotlib.pyplot as plt
+    import japanize_matplotlib
     import streamlit as st
     from io import BytesIO
     from PIL import Image
